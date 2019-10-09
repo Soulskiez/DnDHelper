@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import theme from './theme';
 import { Route, Link, Switch } from 'react-router-dom';
@@ -6,6 +6,9 @@ import { Route, Link, Switch } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 import Image from './Ring.png';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
 import Classes from './pages/Classes';
 import Equipment from './pages/Equipment';
@@ -49,6 +52,11 @@ const useStyles = makeStyles({
 
 function App() {
   const classes = useStyles();
+  const [value, setValue] = useState(0);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
@@ -59,6 +67,17 @@ function App() {
           <img className={classes.ringIcon} src={Image} />
         </div>
         <div className={classes.pageContent}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            indicatorColor="primary"
+            centered
+          >
+            <Tab component={Link} to="/classes" label="Classes" />
+            <Tab component={Link} to="/equipment" label="Equipment" />
+            <Tab component={Link} to="/game-mechanics" label="Game Mechanics" />
+            <Tab component={Link} to="/races" label="Races" />
+          </Tabs>
           <Switch>
             <Route path="/classes" component={Classes} />
             <Route path="/equipment" component={Equipment} />
