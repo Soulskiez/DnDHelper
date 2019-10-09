@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import theme from './theme';
 import { Route, Link, Switch } from 'react-router-dom';
+import { ResiftProvider } from 'resift';
+import dataService from './dataService';
 
 import { ThemeProvider } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
-import Image from './Ring.png';
-import Paper from '@material-ui/core/Paper';
+import RingIcon from './components/Icons/Ring.png';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
@@ -58,38 +59,44 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <div className={classes.root}>
-        <div className={classes.pageHeader}>
-          <Typography className={classes.pageTitle}>
-            Ring of Knowledge
-          </Typography>
-          <img className={classes.ringIcon} src={Image} />
+    <ResiftProvider dataService={dataService}>
+      <ThemeProvider theme={theme}>
+        <div className={classes.root}>
+          <div className={classes.pageHeader}>
+            <Typography className={classes.pageTitle}>
+              Ring of Knowledge
+            </Typography>
+            <img className={classes.ringIcon} src={RingIcon} />
+          </div>
+          <div className={classes.pageContent}>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              indicatorColor="primary"
+              centered
+            >
+              <Tab component={Link} to="/classes" label="Classes" />
+              <Tab component={Link} to="/equipment" label="Equipment" />
+              <Tab
+                component={Link}
+                to="/game-mechanics"
+                label="Game Mechanics"
+              />
+              <Tab component={Link} to="/races" label="Races" />
+            </Tabs>
+            <Switch>
+              <Route path="/classes" component={Classes} />
+              <Route path="/equipment" component={Equipment} />
+              <Route path="/game-mechanics" component={GameMechanics} />
+              <Route path="/races" component={Races} />
+            </Switch>
+          </div>
+          <div className={classes.pageFooter}>
+            <Typography>Hello I am a page footer</Typography>
+          </div>
         </div>
-        <div className={classes.pageContent}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            indicatorColor="primary"
-            centered
-          >
-            <Tab component={Link} to="/classes" label="Classes" />
-            <Tab component={Link} to="/equipment" label="Equipment" />
-            <Tab component={Link} to="/game-mechanics" label="Game Mechanics" />
-            <Tab component={Link} to="/races" label="Races" />
-          </Tabs>
-          <Switch>
-            <Route path="/classes" component={Classes} />
-            <Route path="/equipment" component={Equipment} />
-            <Route path="/game-mechanics" component={GameMechanics} />
-            <Route path="/races" component={Races} />
-          </Switch>
-        </div>
-        <div className={classes.pageFooter}>
-          <Typography>Hello I am a page footer</Typography>
-        </div>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </ResiftProvider>
   );
 }
 
