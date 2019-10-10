@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import makeClassFetch from '../../fetches/makeClassFetch';
+import makeClassFetch from '../../../../fetches/makeClassFetch';
 import { useFetch, useDispatch } from 'resift';
 
 import Classes from './Classes';

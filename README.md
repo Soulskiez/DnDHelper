@@ -29,4 +29,5 @@ Goal of this project is to demonstrate skill and knowledge with React.js.
 
 
 ## 10/09/2019 Screenshot
+Initial page scaffold. Resift and Redux store added. Initial routing set up.
 ![first-screenshot](src/screenshots/firstscreenshot.png)
