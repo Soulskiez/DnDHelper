@@ -4,7 +4,7 @@ const makeClassesFetch = defineFetch({
   displayName: 'Classes Fetch',
   make: () => ({
     key: ['classes'],
-    request: () => ({ http }) => {
+    request: index => ({ http }) => {
       const classes = http({
         method: 'GET',
         route: 'classes',
