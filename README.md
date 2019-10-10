@@ -15,15 +15,15 @@ Goal of this project is to demonstrate skill and knowledge with React.js.
 ### RoadMap
 - [x] Implement Resift * Small
 - [x] Finish Footer * Very Small
-- [] Show data for everything classes endpoint provides. * Small to Medium
-- [] Show data for everything equipment endpoint provides. * Small to Medium
-- [] Show data for everything game mechanics classes endpoint provides. * Small to Medium
-- [] Show data for everything races classes endpoint provides. * Small to Medium
-- [] Show data for everything spells classes endpoint provides. * Small to Medium
-- [] Figure out how I want to deploy app and deploy it. * Small to Medium
-- [] Implement character builder template.  * Large
-- [] Message board. * Very Large
-- [] Game to test out your created characters in specific scenarios. * Very Large
+- [ ] Show data for everything classes endpoint provides. * Small to Medium
+- [ ] Show data for everything equipment endpoint provides. * Small to Medium
+- [ ] Show data for everything game mechanics classes endpoint provides. * Small to Medium
+- [ ] Show data for everything races classes endpoint provides. * Small to Medium
+- [ ] Show data for everything spells classes endpoint provides. * Small to Medium
+- [ ] Figure out how I want to deploy app and deploy it. * Small to Medium
+- [ ] Implement character builder template.  * Large
+- [ ] Message board. * Very Large
+- [ ] Game to test out your created characters in specific scenarios. * Very Large
 
 
 
