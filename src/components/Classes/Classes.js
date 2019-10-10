@@ -50,6 +50,10 @@ const useStyles = makeStyles({
     fontWeight: 'bold',
     fontSize: 18,
   },
+  info: {
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
 });
 Classes.propTypes = {
   classesDnd: PropTypes.object,
@@ -99,6 +103,18 @@ function Classes(props) {
           <Typography className={classes.title}>
             Class: {classInfo.name}
           </Typography>
+          <Typography className={classes.info}>Proficiency Skills:</Typography>
+          <Typography className={classes.info}>
+            Hit Die: {classInfo.hit_die}
+          </Typography>
+          <Typography className={classes.info}>
+            Proficiency Armor / Weapons:
+          </Typography>
+          <Typography className={classes.info}>Saving Throws:</Typography>
+          <Typography className={classes.info}>Starting Equipment:</Typography>
+          <Typography className={classes.info}>Class Levels:</Typography>
+          <Typography className={classes.info}>Subclasses:</Typography>
+          <Typography className={classes.info}>Proficiency Skills:</Typography>
         </div>
       )}
     </div>
