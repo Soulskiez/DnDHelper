@@ -9,10 +9,12 @@ import RingIcon from '../../components/Icons/Ring.png';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
+import Footer from '../../components/Footer';
 import Classes from './components/Classes';
 import Equipment from './components/Equipment';
 import GameMechanics from './components/GameMechanics';
 import Races from './components/Races';
+import LandingPage from './components/LandingPage';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -79,10 +81,11 @@ function MainPage(props) {
           <Route path="/equipment" component={Equipment} />
           <Route path="/game-mechanics" component={GameMechanics} />
           <Route path="/races" component={Races} />
+          <Route path="/" component={LandingPage} />
         </Switch>
       </div>
       <div className={classes.pageFooter}>
-        <Typography>Hello I am a page footer</Typography>
+        <Footer />
       </div>
     </div>
   );
